@@ -24,12 +24,13 @@ The raw transactional data was not suitable for time series modeling. The first 
 ### 2. Exploratory Analysis & Initial Modeling
 
 * **Decomposition:** The `statsmodels.tsa.seasonal_decompose` function was used to break the time series into its **Trend**, **Seasonality**, and **Residual** components. This visually confirmed a strong annual (12-month) seasonality.
+* 
+![Sales Time Series Decomposition](images/decomposition.png)
+
 * **Stationarity Test:** The **Augmented Dickey-Fuller (ADF)** test was used to check for stationarity.
 * **Simple ARIMA Models:** Initial attempts using `ARIMA(1, 1, 1)` and `ARIMA(0, 1, 1)` failed.
     * **Result:** The models produced a "flat-line" forecast, completely ignoring the seasonal pattern.
     * **Diagnostics:** The model summaries showed critical failures. The `Jarque-Bera (Prob(JB) = 0.00)` test indicated residuals were not normally distributed, and `Prob(H) = 0.00` indicated non-constant variance. Critically, a `Covariance matrix is singular` warning invalidated the results.
-
-![Sales Time Series Decomposition](images/decomposition.png)
 
 ### 3. Model Refinement: SARIMA and Log Transformation
 

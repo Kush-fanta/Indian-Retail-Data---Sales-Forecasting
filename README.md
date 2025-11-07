@@ -29,7 +29,7 @@ The raw transactional data was not suitable for time series modeling. The first 
     * **Result:** The models produced a "flat-line" forecast, completely ignoring the seasonal pattern.
     * **Diagnostics:** The model summaries showed critical failures. The `Jarque-Bera (Prob(JB) = 0.00)` test indicated residuals were not normally distributed, and `Prob(H) = 0.00` indicated non-constant variance. Critically, a `Covariance matrix is singular` warning invalidated the results.
 
-![Sales Time Series Decomposition](images/decomposition_plot.png)
+![Sales Time Series Decomposition](images/decomposition.png)
 
 ### 3. Model Refinement: SARIMA and Log Transformation
 

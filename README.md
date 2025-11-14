@@ -74,6 +74,8 @@ The final, validated model was used to forecast the next 12 months.
 2.  The `.forecast(steps=12)` method was called to get the predictions (which were in log scale).
 3.  The predictions were transformed back to the original dollar scale using the **exponential function (`np.exp(forecast) - 1`)**.
 
+![Sales Forecasting](images/sarima_forecasting_after_grid_search.png)
+
 The resulting forecast correctly captured the seasonal peaks and valleys of the sales data.
 
 ## Libraries Used
